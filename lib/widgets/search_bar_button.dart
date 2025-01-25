@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:perplexity_clone/theme/colors.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
 
 class SearchBarButton extends StatefulWidget {
   final IconData icon;
@@ -38,20 +38,20 @@ class _SearchBarButtonState extends State<SearchBarButton> {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6),
-          color: isHovered ? AppColors.proButton : Colors.transparent,
+          color: isHovered ? XColors.proButton : Colors.transparent,
         ),
         child: Row(
           children: [
             Icon(
               widget.icon,
-              color: AppColors.iconGrey,
+              color: XColors.iconGrey,
               size: 20,
             ),
             const SizedBox(width: 8),
             Text(
               widget.text,
               style: TextStyle(
-                color: AppColors.textGrey,
+                color: XColors.textGrey,
               ),
             ),
           ],
