@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:perplexity_clone/pages/chat_page.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
-import 'package:perplexity_clone/theme/colors.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/widgets/search_bar_button.dart';
 
 class SearchSection extends StatefulWidget {
@@ -16,9 +16,17 @@ class _SearchSectionState extends State<SearchSection> {
   final queryController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+    queryController.addListener(() {
+      setState(() {}); // Rebuild the widget tree when the text changes
+    });
+  }
+
+  @override
   void dispose() {
-    super.dispose();
     queryController.dispose();
+    super.dispose();
   }
 
   @override
@@ -27,7 +35,7 @@ class _SearchSectionState extends State<SearchSection> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Where knowledge begins',
+          'What do you want to know?',
           style: GoogleFonts.ibmPlexMono(
             fontSize: 40,
             fontWeight: FontWeight.w400,
@@ -39,10 +47,10 @@ class _SearchSectionState extends State<SearchSection> {
         Container(
           width: 700,
           decoration: BoxDecoration(
-            color: AppColors.searchBar,
+            color: XColors.searchBar,
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: AppColors.searchBarBorder,
+              color: XColors.searchBarBorder,
               width: 1.5,
             ),
           ),
@@ -55,7 +63,7 @@ class _SearchSectionState extends State<SearchSection> {
                   decoration: InputDecoration(
                     hintText: 'Search anything...',
                     hintStyle: TextStyle(
-                      color: AppColors.textGrey,
+                      color: XColors.textGrey,
                       fontSize: 16,
                     ),
                     border: InputBorder.none,
@@ -69,7 +77,7 @@ class _SearchSectionState extends State<SearchSection> {
                 child: Row(
                   children: [
                     SearchBarButton(
-                      icon: Icons.auto_awesome_outlined,
+                      icon: Icons.filter_list_outlined,
                       text: 'Focus',
                     ),
                     const SizedBox(width: 12),
@@ -91,12 +99,16 @@ class _SearchSectionState extends State<SearchSection> {
                       child: Container(
                         padding: EdgeInsets.all(9),
                         decoration: BoxDecoration(
-                          color: AppColors.submitButton,
+                          color: queryController.text.isEmpty
+                              ? XColors.searchBarBorder
+                              : XColors.submitButton,
                           borderRadius: BorderRadius.circular(40),
                         ),
-                        child: const Icon(
+                        child: Icon(
                           Icons.arrow_forward,
-                          color: AppColors.background,
+                          color: queryController.text.isEmpty
+                              ? XColors.iconGrey
+                              : XColors.background,
                           size: 16,
                         ),
                       ),
