@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
-import 'package:perplexity_clone/theme/colors.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class AnswerSection extends StatefulWidget {
@@ -67,7 +67,7 @@ As of the end of Day 1 in the fourth Test match between India and Australia, the
             styleSheet:
                 MarkdownStyleSheet.fromTheme(Theme.of(context)).copyWith(
               codeblockDecoration: BoxDecoration(
-                color: AppColors.cardColor,
+                color: XColors.cardColor,
                 borderRadius: BorderRadius.circular(10),
               ),
               code: const TextStyle(fontSize: 16),
