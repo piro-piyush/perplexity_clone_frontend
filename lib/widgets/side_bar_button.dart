@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:perplexity_clone/theme/colors.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
 
 class SideBarButton extends StatelessWidget {
   final bool isCollapsed;
@@ -24,7 +24,7 @@ class SideBarButton extends StatelessWidget {
           margin: EdgeInsets.symmetric(vertical: 14, horizontal: 10),
           child: Icon(
             icon,
-            color: AppColors.iconGrey,
+            color: XColors.iconGrey,
             size: 22,
           ),
         ),

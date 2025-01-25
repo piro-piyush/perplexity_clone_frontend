@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
-import 'package:perplexity_clone/theme/colors.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class SourcesSection extends StatefulWidget {
@@ -78,7 +78,7 @@ class _SourcesSectionState extends State<SourcesSection> {
                 width: 150,
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: AppColors.cardColor,
+                  color: XColors.cardColor,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(
