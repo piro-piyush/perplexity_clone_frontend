@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/common/widgets/layouts/sidebar/sidebar.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
-import 'package:perplexity_clone/theme/colors.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/widgets/search_section.dart';
-import 'package:perplexity_clone/widgets/side_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                           "Pro",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppColors.footerGrey,
+                            color: XColors.footerGrey,
                           ),
                         ),
                       ),
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                           "Enterprise",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppColors.footerGrey,
+                            color: XColors.footerGrey,
                           ),
                         ),
                       ),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                           "Store",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppColors.footerGrey,
+                            color: XColors.footerGrey,
                           ),
                         ),
                       ),
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                           "Blog",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppColors.footerGrey,
+                            color: XColors.footerGrey,
                           ),
                         ),
                       ),
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                           "Careers",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppColors.footerGrey,
+                            color: XColors.footerGrey,
                           ),
                         ),
                       ),
@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                           "English (English)",
                           style: TextStyle(
                             fontSize: 14,
-                            color: AppColors.footerGrey,
+                            color: XColors.footerGrey,
                           ),
                         ),
                       )
