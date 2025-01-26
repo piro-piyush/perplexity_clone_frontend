@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
+import 'package:perplexity_clone/utils/constants/image_strings.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class AnswerSection extends StatefulWidget {
@@ -47,12 +49,26 @@ As of the end of Day 1 in the fourth Test match between India and Australia, the
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Perplexity',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+        Row(
+          children: [
+            SvgPicture.asset(
+              XImages.appIcon,
+              colorFilter: ColorFilter.mode(
+                XColors.iconGrey,
+                BlendMode.srcIn,
+              ),
+              height: 24,
+              width: 19,
+            ),
+            SizedBox(width: 12),
+            Text(
+              'Answer',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
         Skeletonizer(
           enabled: isLoading,
