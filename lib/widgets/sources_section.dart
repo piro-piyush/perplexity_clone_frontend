@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
+import 'package:perplexity_clone/utils/constants/image_strings.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class SourcesSection extends StatefulWidget {
@@ -48,11 +50,16 @@ class _SourcesSectionState extends State<SourcesSection> {
       children: [
         Row(
           children: [
-            Icon(
-              Icons.source_outlined,
-              color: Colors.white70,
+            SvgPicture.asset(
+              XImages.sources,
+              colorFilter: ColorFilter.mode(
+                XColors.iconGrey,
+                BlendMode.srcIn,
+              ),
+              height: 22,
+              width: 25,
             ),
-            SizedBox(width: 8),
+            SizedBox(width: 12),
             Text(
               "Sources",
               style: TextStyle(
