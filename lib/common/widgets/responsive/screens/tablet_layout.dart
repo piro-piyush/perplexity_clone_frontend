@@ -15,16 +15,16 @@ class TabletLayout extends StatelessWidget {
           // Expanded(child: ),
           SideBar(),
           Expanded(
-              flex: 5,
+              // flex: 5,
               child: Column(
-                children: [
-                  // Header
-                  // THeader(),
+            children: [
+              // Header
+              // THeader(),
 
-                  // Body
-                  Expanded(child: body ?? SizedBox()),
-                ],
-              ))
+              // Body
+              Expanded(child: body ?? SizedBox()),
+            ],
+          ))
         ],
       ),
     );

@@ -5,8 +5,8 @@ import 'package:perplexity_clone/common/widgets/responsive/screens/mobile_layout
 import 'package:perplexity_clone/common/widgets/responsive/screens/tablet_layout.dart';
 
 // Template for the overall site layout , responsive to different screen sizes
-class TSiteTemplate extends StatelessWidget {
-  const TSiteTemplate(
+class XSiteTemplate extends StatelessWidget {
+  const XSiteTemplate(
       {super.key,
       this.desktop,
       this.tablet,
