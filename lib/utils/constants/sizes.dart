@@ -1,4 +1,3 @@
-
 class XSizes {
   // Padding and margin sizes
   static const double xs = 4.0;
@@ -74,6 +73,3 @@ class XSizes {
   static const int mobileScreenSize = 360;
   static const int customScreenSize = 1100;
 }
-
-
-
