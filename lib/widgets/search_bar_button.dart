@@ -37,7 +37,7 @@ class _SearchBarButtonState extends State<SearchBarButton> {
           vertical: 4,
         ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(20),
           color: isHovered ? XColors.proButton : Colors.transparent,
         ),
         child: Row(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:perplexity_clone/pages/chat_page.dart';
+import 'package:perplexity_clone/routes/routes.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/widgets/search_bar_button.dart';
@@ -19,7 +20,7 @@ class _SearchSectionState extends State<SearchSection> {
   void initState() {
     super.initState();
     queryController.addListener(() {
-      setState(() {}); // Rebuild the widget tree when the text changes
+      setState(() {});
     });
   }
 
@@ -43,9 +44,10 @@ class _SearchSectionState extends State<SearchSection> {
             letterSpacing: -0.5,
           ),
         ),
-        const SizedBox(height: 32),
+        const SizedBox(height: 36),
         Container(
-          width: 700,
+          width: 640,
+          height: 119,
           decoration: BoxDecoration(
             color: XColors.searchBar,
             borderRadius: BorderRadius.circular(8),
@@ -61,7 +63,7 @@ class _SearchSectionState extends State<SearchSection> {
                 child: TextField(
                   controller: queryController,
                   decoration: InputDecoration(
-                    hintText: 'Search anything...',
+                    hintText: 'Ask anything...',
                     hintStyle: TextStyle(
                       color: XColors.textGrey,
                       fontSize: 16,
@@ -75,43 +77,77 @@ class _SearchSectionState extends State<SearchSection> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SearchBarButton(
-                      icon: Icons.filter_list_outlined,
-                      text: 'Focus',
+                    Row(
+                      children: [
+                        SearchBarButton(
+                          icon: Icons.filter_list_outlined,
+                          text: 'Focus',
+                        ),
+                        const SizedBox(width: 12),
+                        SearchBarButton(
+                          icon: Icons.add_circle_outline_outlined,
+                          text: 'Attach',
+                        ),
+                      ],
                     ),
-                    const SizedBox(width: 12),
-                    SearchBarButton(
-                      icon: Icons.add_circle_outline_outlined,
-                      text: 'Attach',
-                    ),
-                    const Spacer(),
-                    GestureDetector(
-                      onTap: () {
-                        ChatWebService().chat(queryController.text.trim());
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) =>
-                                ChatPage(question: queryController.text.trim()),
+                    Row(
+                      children: [
+                        Transform.scale(
+                          scale: 0.7,
+                          child: Switch(
+                            value: false,
+                            onChanged: (value) {
+                              setState(() {
+                                // isOn = value;
+                              });
+                            },
+                            padding: EdgeInsets.zero,
+                            activeColor: XColors.submitButton,
+                            inactiveThumbColor: Colors.grey,
+                            inactiveTrackColor: Colors.transparent,
+                            trackOutlineWidth:
+                                WidgetStateProperty.all(1.0), // Border width
                           ),
-                        );
-                      },
-                      child: Container(
-                        padding: EdgeInsets.all(9),
-                        decoration: BoxDecoration(
-                          color: queryController.text.isEmpty
-                              ? XColors.searchBarBorder
-                              : XColors.submitButton,
-                          borderRadius: BorderRadius.circular(40),
                         ),
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: queryController.text.isEmpty
-                              ? XColors.iconGrey
-                              : XColors.background,
-                          size: 16,
+                        SizedBox(
+                          width: 10,
                         ),
-                      ),
+                        Text(
+                          "Pro",
+                          style: TextStyle(
+                              color: XColors.iconGrey,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            ChatWebService().chat(queryController.text.trim());
+                            Get.toNamed(XRoutes.chat,
+                                arguments: queryController.text.trim());
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(9),
+                            decoration: BoxDecoration(
+                              color: queryController.text.isEmpty
+                                  ? XColors.proButton
+                                  : XColors.submitButton,
+                              borderRadius: BorderRadius.circular(32),
+                            ),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: queryController.text.isEmpty
+                                  ? XColors.iconGrey
+                                  : XColors.background,
+                              size: 16,
+                            ),
+                          ),
+                        )
+                      ],
                     )
                   ],
                 ),
