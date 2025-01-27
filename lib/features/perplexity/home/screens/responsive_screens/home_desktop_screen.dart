@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:perplexity_clone/features/perplexity/home/screens/widgets/footer_button.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:perplexity_clone/features/perplexity/home/screens/widgets/footer_section.dart';
 import 'package:perplexity_clone/features/perplexity/home/screens/widgets/quick_searches_buttons.dart';
+import 'package:perplexity_clone/features/perplexity/home/screens/widgets/search_section.dart';
 import 'package:perplexity_clone/services/chat_web_service.dart';
-import 'package:perplexity_clone/widgets/search_section.dart';
+import 'package:perplexity_clone/utils/constants/colors.dart';
+import 'package:perplexity_clone/utils/constants/image_strings.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
   const HomeDesktopScreen({super.key});
@@ -12,6 +15,8 @@ class HomeDesktopScreen extends StatefulWidget {
 }
 
 class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
+  bool isHoveringQuestionMark = false;
+
   @override
   void initState() {
     super.initState();
@@ -20,69 +25,87 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Stack(
       children: [
-        Expanded(
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Expanded(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0),
+                child: SizedBox(
+                  height: 625,
+                  width: 640,
                   child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Search Section
-                  SearchSection(),
-
-                  SizedBox(
-                    height: 16,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      // Search Section
+                      SizedBox(
+                        height: 32,
+                      ),
+                      SearchSection(),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      SizedBox(height: 16),
+                      QuickSearchesButtons(),
+                    ],
                   ),
-
-                  QuickSearchesButton(),
-                ],
-              )),
-
-              // Footer
-              Container(
-                padding: EdgeInsets.symmetric(vertical: 16),
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  children: [
-                    FooterButton(
-                      title: "Pro",
-                      onTap: () {},
-                    ),
-                    FooterButton(
-                      title: "Enterprise",
-                      onTap: () {},
-                    ),
-                    FooterButton(
-                      title: "Store",
-                      onTap: () {},
-                    ),
-                    FooterButton(
-                      title: "Blog",
-                      onTap: () {},
-                    ),
-                    FooterButton(
-                      title: "Careers",
-                      onTap: () {},
-                    ),
-                    FooterButton(
-                      title: "Education",
-                      onTap: () {},
-                    ),
-                    FooterButton(
-                      title: "English (English) ",
-                      onTap: () {},
-                    ),
-                  ],
                 ),
-              )
+              ),
+
+              // Footer Section
+              const FooterSection(),
             ],
           ),
-        )
+        ),
+
+        // Question Mark Icon
+        Positioned(
+          right: 15,
+          bottom: 15,
+          child: GestureDetector(
+            onTap: () {
+              // Handle tap if needed
+            },
+            child: MouseRegion(
+              onEnter: (_) {
+                setState(() {
+                  isHoveringQuestionMark = true;
+                });
+              },
+              onExit: (_) {
+                setState(() {
+                  isHoveringQuestionMark = false;
+                });
+              },
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 200),
+                width: 32,
+                height: 32,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(32),
+                  color: XColors.whiteColor,
+                ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    XImages.question,
+                    height: 17,
+                    width: 14,
+                    colorFilter: ColorFilter.mode(
+                      isHoveringQuestionMark
+                          ? XColors.submitButton
+                          : XColors.background,
+                      BlendMode.srcIn,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
