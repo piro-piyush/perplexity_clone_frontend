@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/common/widgets/layouts/bottom_navigation_bar/bottom_navigation_bar.dart';
 
 class MobileLayout extends StatelessWidget {
   MobileLayout({super.key, this.body});
@@ -9,12 +10,11 @@ class MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      // drawer: TSidebar(),
-      // appBar: THeader(
-      //   scaffoldKey: scaffoldKey,
-      // ),
-      body: body ?? SizedBox(),
+      bottomNavigationBar: CustomBottomNavigationBar(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: body ?? SizedBox(),
+      ),
     );
   }
 }
