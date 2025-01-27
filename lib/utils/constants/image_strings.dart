@@ -46,6 +46,7 @@ class XImages {
   static const String sources = "assets/icons/sources.svg";
   static const String spaces = "assets/icons/spaces.svg";
   static const String sports = "assets/icons/sports.svg";
+  static const String userIcon = "assets/icons/user.svg";
   static const String video = "assets/icons/videos.svg";
 
   //Profile
