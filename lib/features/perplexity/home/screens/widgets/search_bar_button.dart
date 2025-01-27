@@ -34,20 +34,20 @@ class _SearchBarButtonState extends State<SearchBarButton> {
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 8,
-          vertical: 4,
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: isHovered ? XColors.proButton : Colors.transparent,
         ),
         child: Row(
+
           children: [
             Icon(
               widget.icon,
               color: XColors.iconGrey,
               size: 20,
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: 4),
             Text(
               widget.text,
               style: TextStyle(
