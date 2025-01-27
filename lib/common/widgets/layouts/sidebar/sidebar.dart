@@ -31,7 +31,7 @@ class _SideBarState extends State<SideBar> {
             SideBarHeader(),
 
             // Buttons
-            SideBarButtons(),
+            Expanded(child: SideBarButtons()),
 
             // Footer
             SideBarFooter()
