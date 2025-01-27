@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/answer_section.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/right_side_bar_button.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';
 import 'package:perplexity_clone/utils/device/device_utility.dart';
-import 'package:perplexity_clone/widgets/answer_section.dart';
-import 'package:perplexity_clone/widgets/sources_section.dart';
+import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/sources_section.dart';
 
 class ChatDesktopScreen extends StatelessWidget {
   final String question;
