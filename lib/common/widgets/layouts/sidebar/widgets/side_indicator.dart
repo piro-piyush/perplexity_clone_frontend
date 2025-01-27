@@ -4,7 +4,12 @@ import 'package:perplexity_clone/utils/constants/colors.dart';
 class SideIndicator extends StatelessWidget {
   const SideIndicator({
     super.key,
+    this.height = 40,
+    this.width = 3,
   });
+
+  final double height;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +17,8 @@ class SideIndicator extends StatelessWidget {
       right: 0,
       child: Container(
         color: XColors.whiteColor,
-        height: 40,
-        width: 2,
+        height: height,
+        width: width,
       ),
     );
   }

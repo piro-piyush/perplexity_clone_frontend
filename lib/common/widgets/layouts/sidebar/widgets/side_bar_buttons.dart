@@ -12,37 +12,40 @@ class SideBarButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = SidebarController.instance;
-    return Expanded(
-      child: Column(
-        spacing: 4,
-        crossAxisAlignment: controller.isCollapsed.value
-            ? CrossAxisAlignment.center
-            : CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 24),
+    return Column(
+      spacing: 4,
+      crossAxisAlignment: controller.isCollapsed.value
+          ? CrossAxisAlignment.center
+          : CrossAxisAlignment.start,
+      children: [
+        SideBarButton(
+          route: XRoutes.home,
+          iconImage: XImages.home,
+          text: "Home",
+        ),
+        SideBarButton(
+          route: XRoutes.discover,
+          iconImage: XImages.discover,
+          text: "Discover",
+        ),
+        SideBarButton(
+          route: XRoutes.spaces,
+          iconImage: XImages.spaces,
+          text: "Spaces",
+        ),
+        SideBarButton(
+          route: XRoutes.library,
+          iconImage: XImages.library,
+          text: "Library",
+        ),
+        if (controller.isCollapsed.value)
           SideBarButton(
-            route: XRoutes.home,
-            iconImage: XImages.home,
-            text: "Home",
+            route: XRoutes.signIn,
+            iconImage: XImages.userIcon,
+            text: "Sign In",
           ),
-          SideBarButton(
-            route: XRoutes.discover,
-            iconImage: XImages.discover,
-            text: "Discover",
-          ),
-          SideBarButton(
-            route: XRoutes.spaces,
-            iconImage: XImages.spaces,
-            text: "Spaces",
-          ),
-          SideBarButton(
-            route: XRoutes.library,
-            iconImage: XImages.library,
-            text: "Library",
-          ),
-          const Spacer(),
-        ],
-      ),
+        const Spacer(),
+      ],
     );
   }
 }
