@@ -16,23 +16,21 @@ class _FooterButtonState extends State<FooterButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        onEnter: (_) => setState(() => isHovered = true),
-        onExit: (_) => setState(() => isHovered = false),
-        child: GestureDetector(
-          onTap: widget.onTap,
-          child: Text(
-            widget.title,
-            style: TextStyle(
-              fontSize: 14,
-              color: XColors.footerGrey,
-              decoration:
-                  isHovered ? TextDecoration.underline : TextDecoration.none,
-              decorationColor: XColors.footerGrey,
-            ),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      onEnter: (_) => setState(() => isHovered = true),
+      onExit: (_) => setState(() => isHovered = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: Text(
+          widget.title,
+          style: TextStyle(
+            fontSize: 14,
+            color: XColors.footerGrey,
+            fontWeight: FontWeight.w600,
+            decoration:
+                isHovered ? TextDecoration.underline : TextDecoration.none,
+            decorationColor: XColors.footerGrey,
           ),
         ),
       ),
