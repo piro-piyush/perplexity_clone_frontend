@@ -30,7 +30,8 @@ class _QuickSearchContainerState extends State<QuickSearchContainer> {
         });
       },
       child: Container(
-        padding: const EdgeInsets.all(8),
+        height: 41,
+        padding: const EdgeInsets.all(4),
         decoration: BoxDecoration(
           color: isHover ? XColors.searchBar : Colors.transparent,
           // Hover effect
@@ -42,7 +43,7 @@ class _QuickSearchContainerState extends State<QuickSearchContainer> {
         child: Row(
           children: [
             Container(
-              padding: const EdgeInsets.all(6),
+              padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
                 color: XColors.searchBar, // Updated background color
                 borderRadius: BorderRadius.circular(8),
