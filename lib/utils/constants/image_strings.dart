@@ -21,6 +21,7 @@ class XImages {
   static const String discord = "assets/social_icons/discord.svg";
 
   // -- Svg Icons
+  static const String add = "assets/icons/add.svg";
   static const String appIcon = "assets/icons/app_icon.svg";
   static const String ai = "assets/icons/ai.svg";
   static const String arrowDown = "assets/icons/arrow_down.svg";
@@ -36,13 +37,21 @@ class XImages {
   static const String dollar = "assets/icons/dollar.svg";
   static const String download = "assets/icons/download.svg";
   static const String entertainment = "assets/icons/entertainment.svg";
+  static const String files = "assets/icons/files.svg";
+  static const String forYou = "assets/icons/forYou.svg";
   static const String genImage = "assets/icons/generate_image.svg";
   static const String home = "assets/icons/home.svg";
   static const String image = "assets/icons/images.svg";
+  static const String instructions = "assets/icons/instructions.svg";
   static const String library = "assets/icons/library.svg";
+  static const String options = "assets/icons/options.svg";
   static const String person = "assets/icons/person.svg";
+  static const String private = "assets/icons/private.svg";
   static const String question = "assets/icons/question.svg";
   static const String settings = "assets/icons/settings.svg";
+  static const String top = "assets/icons/top.svg";
+  static const String time = "assets/icons/time.svg";
+  static const String threads = "assets/icons/threads.svg";
   static const String sources = "assets/icons/sources.svg";
   static const String spaces = "assets/icons/spaces.svg";
   static const String sports = "assets/icons/sports.svg";
