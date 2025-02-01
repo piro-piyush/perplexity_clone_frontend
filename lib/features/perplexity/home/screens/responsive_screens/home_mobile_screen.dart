@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/features/perplexity/home/screens/widgets/quick_searches_buttons.dart';
 import 'package:perplexity_clone/features/perplexity/home/screens/widgets/search_section.dart';
-import 'package:perplexity_clone/services/chat_web_service.dart';
+import 'package:perplexity_clone/data/services/chat_web_service.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';
 
