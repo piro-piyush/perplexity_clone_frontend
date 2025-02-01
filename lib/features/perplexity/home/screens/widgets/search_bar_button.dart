@@ -32,15 +32,12 @@ class _SearchBarButtonState extends State<SearchBarButton> {
         });
       },
       child: Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 8,
-        ),
+        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: isHovered ? XColors.proButton : Colors.transparent,
         ),
         child: Row(
-
           children: [
             Icon(
               widget.icon,

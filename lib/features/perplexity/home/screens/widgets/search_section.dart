@@ -1,38 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:perplexity_clone/routes/routes.dart';
-import 'package:perplexity_clone/services/chat_web_service.dart';
+import 'package:perplexity_clone/features/perplexity/home/controllers/home_controller.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/features/perplexity/home/screens/widgets/search_bar_button.dart';
 import 'package:perplexity_clone/utils/device/device_utility.dart';
 
-class SearchSection extends StatefulWidget {
+class SearchSection extends StatelessWidget {
   const SearchSection({super.key});
 
   @override
-  State<SearchSection> createState() => _SearchSectionState();
-}
-
-class _SearchSectionState extends State<SearchSection> {
-  final queryController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    queryController.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
-  void dispose() {
-    queryController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final controller = Get.put(HomeController());
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -60,7 +39,7 @@ class _SearchSectionState extends State<SearchSection> {
           child: Column(
             children: [
               TextField(
-                controller: queryController,
+                controller: controller.queryController,
                 decoration: InputDecoration(
                   hintText: 'Ask anything...',
                   hintStyle: TextStyle(
@@ -95,21 +74,21 @@ class _SearchSectionState extends State<SearchSection> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Transform.scale(
-                        scale: 0.7,
-                        child: Switch(
-                          value: false,
-                          onChanged: (value) {
-                            setState(() {
-                              // isOn = value;
-                            });
-                          },
-                          padding: EdgeInsets.zero,
-                          activeColor: XColors.submitButton,
-                          inactiveThumbColor: Colors.grey,
-                          inactiveTrackColor: Colors.transparent,
-                          trackOutlineWidth:
-                              WidgetStateProperty.all(1.0), // Border width
+                      Obx(
+                        () => Transform.scale(
+                          scale: 0.7,
+                          child: Switch(
+                            value: controller.isPro.value,
+                            onChanged: (value) {
+                              controller.isPro.value = value;
+                            },
+                            padding: EdgeInsets.zero,
+                            inactiveThumbColor: Colors.grey,
+                            activeTrackColor: XColors.submitButton,
+                            inactiveTrackColor: Colors.transparent,
+                            trackOutlineWidth:
+                                WidgetStateProperty.all(1.0), // Border width
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -126,31 +105,29 @@ class _SearchSectionState extends State<SearchSection> {
                         ),
                       ),
                       GestureDetector(
-                        onTap: () {
-                          ChatWebService().chat(queryController.text.trim());
-                          Get.toNamed(XRoutes.chat,
-                              arguments: queryController.text.trim());
-                        },
-                        child: Container(
-                          width: 32,
-                          height: 32,
-                          decoration: BoxDecoration(
-                            color: queryController.text.isEmpty
-                                ? XColors.proButton
-                                : XColors.submitButton,
-                            borderRadius: BorderRadius.circular(32),
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.arrow_forward,
-                              color: queryController.text.isEmpty
-                                  ? XColors.iconGrey
-                                  : XColors.background,
-                              size: 14,
+                        onTap: () => controller.search(),
+                        child: Obx(
+                          () => Container(
+                            width: 32,
+                            height: 32,
+                            decoration: BoxDecoration(
+                              color: controller.queryText.value.isEmpty
+                                  ? XColors.proButton
+                                  : XColors.submitButton,
+                              borderRadius: BorderRadius.circular(32),
+                            ),
+                            child: Center(
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: controller.queryText.value.isEmpty
+                                    ? XColors.iconGrey
+                                    : XColors.background,
+                                size: 14,
+                              ),
                             ),
                           ),
                         ),
-                      )
+                      ),
                     ],
                   )
                 ],
