@@ -48,22 +48,22 @@ Screenshots of the app can be found in the `assets/screenshots` folder.
 ### Backend Setup (Fastrack API)
 1. Clone the backend repository (if separate):
    ```sh
-   git clone <backend-repo-url>
-   cd backend
+   git clone https://github.com/piro-piyush/perplexity_backend>
+   cd perplexity_backend
    ```
 2. Install dependencies:
-   ```sh
+   ```python
    pip install -r requirements.txt
    ```
 3. Run the backend:
-   ```sh
-   uvicorn main:app --reload
+   ```python
+   fastapi main.py
    ```
 
 ### Frontend Setup (Flutter)
 1. Clone this repository:
    ```sh
-   git clone <frontend-repo-url>
+   git clone https://github.com/piro-piyush/perplexity_clone_frontend
    cd frontend
    ```
 2. Install dependencies:
@@ -82,13 +82,14 @@ Screenshots of the app can be found in the `assets/screenshots` folder.
 - **Networking:** REST API (via FastAPI)
 
 ## 🙌 Credits
-- **Backend Tutorial by Ranavt** (YouTube)
+- **Backend Tutorial by Rivaan Ranawat** (YouTube)
 - **Flutter UI & Integration:** Custom-built
 
 ## 📌 To-Do List
 - [ ] Improve AI response handling
 - [ ] Implement search in Discover, Library, and Spaces pages
 - [ ] Add authentication system
+- [ ] Implement Responsive screens for Mobile
 
 ---
 Feel free to contribute and enhance the project! 🚀
