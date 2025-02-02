@@ -53,13 +53,13 @@ class _SourcesSectionState extends State<SourcesSection> {
             SvgPicture.asset(
               XImages.sources,
               colorFilter: ColorFilter.mode(
-                XColors.iconGrey,
+                XColors.whiteColor,
                 BlendMode.srcIn,
               ),
-              height: 22,
-              width: 25,
+              height: 18,
+              width: 22,
             ),
-            SizedBox(width: 12),
+            SizedBox(width: 8),
             Text(
               "Sources",
               style: TextStyle(
@@ -69,7 +69,7 @@ class _SourcesSectionState extends State<SourcesSection> {
             )
           ],
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 8),
         Skeletonizer(
           enabled: isLoading,
           effect: ShimmerEffect(
@@ -78,37 +78,43 @@ class _SourcesSectionState extends State<SourcesSection> {
             duration: Duration(seconds: 2),
           ),
           child: Wrap(
-            spacing: 16,
+            spacing: 8,
             runSpacing: 16,
             children: searchResults.map((res) {
-              return Container(
-                width: 150,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: XColors.cardColor,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
-                    Text(
-                      res['title'],
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
+              return GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: 162,
+                  height: 84,
+                  padding: EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: XColors.cardColor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        res['title'],
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13,
+                        ),
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      res['url'],
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 12,
+                      const SizedBox(height: 4),
+                      Text(
+                        res['url'],
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12,
+                        ),
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                       ),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               );
             }).toList(),

@@ -14,37 +14,40 @@ class RightSideBarButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: DottedBorderPainter(),
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                SvgPicture.asset(
-                  image,
-                  width: 17,
-                  height: 14,
-                  colorFilter: ColorFilter.mode(
-                    XColors.whiteColor,
-                    BlendMode.srcIn,
-                  ),
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(
+            8,
+          ),
+          border: Border.all(
+              style: BorderStyle.solid, color: XColors.iconGrey)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              SvgPicture.asset(
+                image,
+                width: 17,
+                height: 14,
+                colorFilter: ColorFilter.mode(
+                  XColors.whiteColor,
+                  BlendMode.srcIn,
                 ),
-                const SizedBox(width: 9),
-                Text(
-                  text,
-                  style: const TextStyle(color: XColors.whiteColor),
-                ),
-              ],
-            ),
-            const Icon(
-              Icons.add,
-              color: XColors.submitButton,
-            ),
-          ],
-        ),
+              ),
+              const SizedBox(width: 9),
+              Text(
+                text,
+                style: const TextStyle(color: XColors.whiteColor),
+              ),
+            ],
+          ),
+          const Icon(
+            Icons.add,
+            color: XColors.submitButton,
+          ),
+        ],
       ),
     );
   }

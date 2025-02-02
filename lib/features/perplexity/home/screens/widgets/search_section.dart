@@ -18,7 +18,7 @@ class SearchSection extends StatelessWidget {
         Text(
           'What do you want to know?',
           style: GoogleFonts.ibmPlexMono(
-            fontSize: 30,
+            fontSize: 36,
             fontWeight: FontWeight.w400,
             height: 1,
             letterSpacing: -0.5,
@@ -26,7 +26,6 @@ class SearchSection extends StatelessWidget {
         ),
         const SizedBox(height: 32),
         Container(
-          height: 119,
           padding: EdgeInsets.only(left: 16, right: 16, bottom: 8, top: 16),
           decoration: BoxDecoration(
             color: XColors.searchBar,
@@ -37,10 +36,15 @@ class SearchSection extends StatelessWidget {
             ),
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              TextField(
+              TextFormField(
+                expands: false,
                 controller: controller.queryController,
+                minLines: 2,
+                maxLines: 12,
                 decoration: InputDecoration(
+                  isDense: true,
                   hintText: 'Ask anything...',
                   hintStyle: TextStyle(
                     color: XColors.textGrey,
