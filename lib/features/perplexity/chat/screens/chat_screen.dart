@@ -10,7 +10,7 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final question = Get.arguments;
+    final question = Get.arguments ?? "Question Not available";
     return XSiteTemplate(
       desktop: ChatDesktopScreen(
         question: question,
