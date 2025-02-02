@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:perplexity_clone/common/widgets/icons/hover_icon.dart';
+import 'package:perplexity_clone/common/widgets/icons/icon_button_with_text.dart';
 import 'package:perplexity_clone/data/services/chat_web_service.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';
@@ -70,14 +72,18 @@ As of the end of Day 1 in the fourth Test match between India and Australia, the
             ),
           ],
         ),
+        SizedBox(
+          height: 8,
+        ),
         Skeletonizer(
-          enabled: isLoading,
+          enabled: false,
           effect: ShimmerEffect(
             baseColor: Colors.grey[850]!,
             highlightColor: Colors.grey[700]!,
             duration: Duration(seconds: 2),
           ),
           child: Markdown(
+            selectable: true,
             data: fullResponse,
             shrinkWrap: true,
             styleSheet:
@@ -90,6 +96,55 @@ As of the end of Day 1 in the fourth Test match between India and Australia, the
             ),
           ),
         ),
+        SizedBox(
+          height: 8,
+        ),
+        Container(
+            padding: EdgeInsets.only(top: 8),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    IconButtonWithText(
+                      iconImage: XImages.share,
+                      label: "Share",
+                      onTap: () {},
+                    ),
+                    IconButtonWithText(
+                      iconImage: XImages.rewrite,
+                      label: "Rewrite",
+                      onTap: () {},
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Row(
+                      children: [
+                        HoverIcon(
+                          iconImage: XImages.like,
+                          onTap: () {},
+                        ),
+                        HoverIcon(
+                          iconImage: XImages.dislike,
+                          onTap: () {},
+                        ),
+                      ],
+                    ),
+                    HoverIcon(
+                      iconImage: XImages.copy,
+                      onTap: () {},
+                    ),
+                    HoverIcon(
+                      iconImage: XImages.options,
+                      onTap: () {},
+                    ),
+                  ],
+                )
+              ],
+            )),
       ],
     );
   }
