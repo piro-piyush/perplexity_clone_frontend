@@ -54,13 +54,13 @@ As of the end of Day 1 in the fourth Test match between India and Australia, the
             SvgPicture.asset(
               XImages.appIcon,
               colorFilter: ColorFilter.mode(
-                XColors.iconGrey,
+                XColors.whiteColor,
                 BlendMode.srcIn,
               ),
               height: 24,
               width: 19,
             ),
-            SizedBox(width: 12),
+            SizedBox(width: 8),
             Text(
               'Answer',
               style: TextStyle(
