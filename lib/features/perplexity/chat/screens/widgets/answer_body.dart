@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/answer_section.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/related_section.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/sources_section.dart';
-import 'package:perplexity_clone/utils/constants/colors.dart';
-import 'package:perplexity_clone/utils/constants/image_strings.dart';
 
 class AnswerBody extends StatelessWidget {
   const AnswerBody({

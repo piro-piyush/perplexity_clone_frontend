@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/left_side_header.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/middle_side_header.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/right_side_header.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
-import 'package:perplexity_clone/utils/constants/image_strings.dart';
 
 class AnswerHeader extends StatefulWidget {
   const AnswerHeader({
