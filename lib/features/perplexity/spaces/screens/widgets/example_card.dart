@@ -65,6 +65,8 @@ class _ExampleCardState extends State<ExampleCard> {
               Text(
                 widget.text,
                 style: TextStyle(fontSize: 16, color: Colors.white),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
               SizedBox(height: 4),
               Row(
