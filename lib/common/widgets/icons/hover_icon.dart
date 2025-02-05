@@ -7,9 +7,10 @@ class HoverIcon extends StatefulWidget {
     super.key,
     this.iconWidth = 17,
     this.iconHeight = 14,
-    this.radius = 32,
+    this.size = 32,
     this.iconColor = XColors.iconGrey,
     this.hoverIconColor = XColors.whiteColor,
+    this.backgroundColor = XColors.iconBg,
     required this.iconImage,
     required this.onTap,
   });
@@ -17,9 +18,10 @@ class HoverIcon extends StatefulWidget {
   final String iconImage;
   final double iconWidth;
   final double iconHeight;
-  final double radius;
+  final double size;
   final Color iconColor;
   final Color hoverIconColor;
+  final Color backgroundColor;
   final VoidCallback onTap;
 
   @override
@@ -37,9 +39,11 @@ class _HoverIconState extends State<HoverIcon> {
       child: GestureDetector(
         onTap: widget.onTap,
         child: Container(
+          width: widget.size,
+          height: widget.size,
           decoration: BoxDecoration(
-            color: isHovering ? XColors.iconBg : Colors.transparent,
-            borderRadius: BorderRadius.circular(widget.radius),
+            color: isHovering ? widget.backgroundColor : Colors.transparent,
+            borderRadius: BorderRadius.circular(widget.size),
           ),
           child: Center(
             child: SvgPicture.asset(
