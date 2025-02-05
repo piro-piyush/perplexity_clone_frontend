@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:perplexity_clone/common/widgets/layouts/sidebar/sidebar_controller.dart';
-import 'package:perplexity_clone/features/auth/login/screens/login_screen.dart';
 import 'package:perplexity_clone/routes/routes.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';

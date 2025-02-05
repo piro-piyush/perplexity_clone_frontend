@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:perplexity_clone/common/widgets/icons/question_mark.dart';
 import 'package:perplexity_clone/features/perplexity/spaces/screens/widgets/example_card.dart';
 import 'package:perplexity_clone/features/perplexity/spaces/screens/widgets/options_widget.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';

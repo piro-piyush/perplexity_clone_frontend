@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/common/widgets/icons/hover_icon.dart';
 import 'package:perplexity_clone/features/perplexity/discover/screens/widgets/side_card_options.dart';
-import 'package:perplexity_clone/features/perplexity/library/screens/widgets/icon_with_hover_effect.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';
 
