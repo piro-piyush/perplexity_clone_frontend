@@ -3,6 +3,7 @@ import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/left_s
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/middle_side_header.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/right_side_header.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
+import 'package:perplexity_clone/utils/constants/sizes.dart';
 
 class AnswerHeader extends StatefulWidget {
   const AnswerHeader({
@@ -20,6 +21,7 @@ class _AnswerHeaderState extends State<AnswerHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: XSizes.appBarHeightDesktop,
       decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(color: XColors.searchBarBorder, width: 1))),
