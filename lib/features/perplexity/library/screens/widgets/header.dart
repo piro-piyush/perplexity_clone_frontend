@@ -14,9 +14,11 @@ class LibraryHeader extends StatelessWidget {
     return Container(
       height: XSizes.appBarHeightDesktop,
       decoration: BoxDecoration(
-          color: XColors.background,
-          border: Border(
-              bottom: BorderSide(color: XColors.searchBarBorder, width: 1))),
+        color: XColors.background,
+        border: Border(
+          bottom: BorderSide(color: XColors.searchBarBorder, width: 1),
+        ),
+      ),
       child: Center(
         child: Flexible(
           child: Container(
