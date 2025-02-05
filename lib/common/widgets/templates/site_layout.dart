@@ -11,6 +11,7 @@ class XSiteTemplate extends StatelessWidget {
       this.desktop,
       this.tablet,
       this.mobile,
+        this.header,
       this.useLayout = true});
 
   // Widget for desktop layout
@@ -22,6 +23,9 @@ class XSiteTemplate extends StatelessWidget {
   // Widget for mobile layout
   final Widget? mobile;
 
+  // Widget for header
+  final Widget? header;
+
   // Flag to determine whether to use the layout
   final bool useLayout;
 
@@ -31,11 +35,13 @@ class XSiteTemplate extends StatelessWidget {
         body: XResponsiveWidget(
       desktop: useLayout
           ? DesktopLayout(
+        header:header,
               body: desktop,
             )
           : desktop ?? Container(),
       tablet: useLayout
           ? TabletLayout(
+        header:header,
               body: tablet ?? desktop,
             )
           : tablet ?? desktop ?? Container(),

@@ -15,50 +15,50 @@ class TabBarChild extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(DiscoverController());
-    return Column(
-      children: [
-        Skeletonizer(
-          effect: ShimmerEffect(
-            baseColor: XColors.searchBar,
-            // begin: Alignment.topLeft,
-            // end: Alignment.bottomRight,
-            highlightColor: XColors.background,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Skeletonizer(
+            effect: ShimmerEffect(
+              baseColor: XColors.searchBar,
+              highlightColor: XColors.background,
+            ),
+            enabled: true,
+            child: Column(
+              spacing: 16,
+              children: [
+                BigNewsCard(model: NewsModel.dummyNews[0]),
+                Row(
+                  spacing: 16,
+                  children: [
+                    SmallNewsCard(model: NewsModel.dummyNews[1]),
+                    SmallNewsCard(model: NewsModel.dummyNews[2]),
+                    SmallNewsCard(model: NewsModel.dummyNews[3]),
+                  ],
+                ),
+                BigNewsCard(model: NewsModel.dummyNews[0]),
+                Row(
+                  spacing: 16,
+                  children: [
+                    SmallNewsCard(model: NewsModel.dummyNews[1]),
+                    SmallNewsCard(model: NewsModel.dummyNews[2]),
+                    SmallNewsCard(model: NewsModel.dummyNews[3]),
+                  ],
+                ),
+                BigNewsCard(model: NewsModel.dummyNews[0]),
+                Row(
+                  spacing: 16,
+                  children: [
+                    SmallNewsCard(model: NewsModel.dummyNews[1]),
+                    SmallNewsCard(model: NewsModel.dummyNews[2]),
+                    SmallNewsCard(model: NewsModel.dummyNews[3]),
+                  ],
+                ),
+              ],
+            ),
           ),
-          enabled: true,
-          child: Column(
-            spacing: 16,
-            children: [
-              BigNewsCard(model: NewsModel.dummyNews[0]),
-              Row(
-                spacing: 16,
-                children: [
-                  SmallNewsCard(model: NewsModel.dummyNews[1]),
-                  SmallNewsCard(model: NewsModel.dummyNews[2]),
-                  SmallNewsCard(model: NewsModel.dummyNews[3]),
-                ],
-              ),
-              BigNewsCard(model: NewsModel.dummyNews[0]),
-              Row(
-                spacing: 16,
-                children: [
-                  SmallNewsCard(model: NewsModel.dummyNews[1]),
-                  SmallNewsCard(model: NewsModel.dummyNews[2]),
-                  SmallNewsCard(model: NewsModel.dummyNews[3]),
-                ],
-              ),
-              BigNewsCard(model: NewsModel.dummyNews[0]),
-              Row(
-                spacing: 16,
-                children: [
-                  SmallNewsCard(model: NewsModel.dummyNews[1]),
-                  SmallNewsCard(model: NewsModel.dummyNews[2]),
-                  SmallNewsCard(model: NewsModel.dummyNews[3]),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

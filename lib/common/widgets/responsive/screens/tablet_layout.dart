@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:perplexity_clone/common/widgets/icons/question_mark.dart';
 import 'package:perplexity_clone/common/widgets/layouts/sidebar/sidebar.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/sizes.dart';
 
 class TabletLayout extends StatelessWidget {
-  TabletLayout({super.key, this.body});
+  TabletLayout({super.key, this.body, this.header});
 
+  final Widget? header;
   final Widget? body;
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
@@ -28,7 +30,17 @@ class TabletLayout extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(XSizes.cardRadiusSm),
               ),
-              child: body ?? SizedBox(),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 70.0),
+                    child: body ?? SizedBox(),
+                  ),
+                  header ?? SizedBox(),
+                  // Question Mark Icon
+                  QuestionMark(),
+                ],
+              ),
             )),
           ],
         ),

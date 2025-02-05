@@ -1,5 +1,4 @@
 class XRoutes {
-  static const signIn = '/sign-in';
   static const login = '/login';
   static const forgetPassword = '/forget-password';
   static const resetPassword = '/reset-password';

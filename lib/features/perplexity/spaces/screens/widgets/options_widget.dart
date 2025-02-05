@@ -32,6 +32,7 @@ class OptionsWidget extends StatelessWidget {
         Text(
           header,
           style: TextStyle(color: XColors.whiteColor, fontSize: 18),
+          textAlign: TextAlign.center,
         ),
         Text(
           body,
