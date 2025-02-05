@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:perplexity_clone/common/widgets/layouts/sidebar/sidebar_controller.dart';
+import 'package:perplexity_clone/features/auth/login/screens/login_screen.dart';
+import 'package:perplexity_clone/routes/routes.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';
 
@@ -79,20 +81,23 @@ class _SideBarFooterState extends State<SideBarFooter> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Container(
-                  width: 188,
-                  height: 40,
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: XColors.submitButton,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                          color: XColors.background,
-                          fontWeight: FontWeight.bold),
+                GestureDetector(
+                  onTap: () => Get.toNamed(XRoutes.login),
+                  child: Container(
+                    width: 188,
+                    height: 40,
+                    padding: EdgeInsets.symmetric(horizontal: 16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: XColors.submitButton,
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(
+                            color: XColors.background,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ),
                 ),
@@ -110,22 +115,25 @@ class _SideBarFooterState extends State<SideBarFooter> {
                       isHovering = false;
                     });
                   },
-                  child: Container(
-                    width: 188,
-                    height: 40,
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: XColors.iconBg,
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Log in",
-                        style: TextStyle(
-                          color: isHovering
-                              ? XColors.iconGrey
-                              : XColors.whiteColor,
-                          fontWeight: FontWeight.bold,
+                  child: GestureDetector(
+                    onTap: () => Get.toNamed(XRoutes.login),
+                    child: Container(
+                      width: 188,
+                      height: 40,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        color: XColors.iconBg,
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Log in",
+                          style: TextStyle(
+                            color: isHovering
+                                ? XColors.iconGrey
+                                : XColors.whiteColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

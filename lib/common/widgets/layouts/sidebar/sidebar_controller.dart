@@ -15,7 +15,7 @@ class SidebarController extends GetxController {
     XRoutes.discover,
     XRoutes.spaces,
     XRoutes.library,
-    XRoutes.signIn,
+    XRoutes.login,
   ];
 
   // Update active route

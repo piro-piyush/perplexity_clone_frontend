@@ -40,7 +40,7 @@ class SideBarButtons extends StatelessWidget {
         ),
         if (controller.isCollapsed.value)
           SideBarButton(
-            route: XRoutes.signIn,
+            route: XRoutes.login,
             iconImage: XImages.userIcon,
             text: "Sign In",
           ),
