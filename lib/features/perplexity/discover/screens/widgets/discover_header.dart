@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/image_strings.dart';
+import 'package:perplexity_clone/utils/constants/sizes.dart';
 
 class DiscoverHeader extends StatefulWidget {
   const DiscoverHeader({
@@ -18,6 +19,7 @@ class _DiscoverHeaderState extends State<DiscoverHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: XSizes.appBarHeightDesktop,
       decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(color: XColors.searchBarBorder, width: 1))),
