@@ -22,6 +22,7 @@ class XImages {
 
   // -- Svg Icons
   static const String add = "assets/icons/add.svg";
+  static const String apple = "assets/icons/apple.svg";
   static const String appIcon = "assets/icons/app_icon.svg";
   static const String ai = "assets/icons/ai.svg";
   static const String arrowDown = "assets/icons/arrow_down.svg";
@@ -40,18 +41,24 @@ class XImages {
   static const String entertainment = "assets/icons/entertainment.svg";
   static const String files = "assets/icons/files.svg";
   static const String forYou = "assets/icons/forYou.svg";
+  static const String google = "assets/icons/google.svg";
   static const String genImage = "assets/icons/generate_image.svg";
+  static const String getStarted = "assets/icons/get_started.svg";
+  static const String helpCenter = "assets/icons/help_center.svg";
   static const String home = "assets/icons/home.svg";
   static const String image = "assets/icons/images.svg";
   static const String instructions = "assets/icons/instructions.svg";
+  static const String keyboardShortcuts = "assets/icons/keyboard_shortcuts.svg";
   static const String library = "assets/icons/library.svg";
   static const String like = "assets/icons/like.svg";
   static const String options = "assets/icons/options.svg";
+  static const String pro = "assets/icons/pro.svg";
   static const String person = "assets/icons/person.svg";
   static const String private = "assets/icons/private.svg";
   static const String question = "assets/icons/question.svg";
   static const String related = "assets/icons/related.svg";
   static const String rewrite = "assets/icons/rewrite.svg";
+  static const String sso = "assets/icons/sso.svg";
   static const String share = "assets/icons/share.svg";
   static const String settings = "assets/icons/settings.svg";
   static const String top = "assets/icons/top.svg";
@@ -62,6 +69,7 @@ class XImages {
   static const String sports = "assets/icons/sports.svg";
   static const String userIcon = "assets/icons/user.svg";
   static const String video = "assets/icons/videos.svg";
+  static const String welcomeImage = "assets/images/welcome_image.webp";
 
   //Profile
   static const String user =
