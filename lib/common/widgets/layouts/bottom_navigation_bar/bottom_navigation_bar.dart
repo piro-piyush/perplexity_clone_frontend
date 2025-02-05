@@ -55,7 +55,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
             if (controller.isCollapsed.value)
               Expanded(
                 child: BottomNavigationBarItem(
-                  route: XRoutes.signIn,
+                  route: XRoutes.login,
                   iconImage: XImages.userIcon,
                   text: "Sign In",
                 ),
