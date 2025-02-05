@@ -4,6 +4,7 @@ import 'package:perplexity_clone/features/perplexity/home/screens/widgets/footer
 import 'package:perplexity_clone/features/perplexity/home/screens/widgets/quick_searches_buttons.dart';
 import 'package:perplexity_clone/features/perplexity/home/screens/widgets/search_section.dart';
 import 'package:perplexity_clone/data/services/chat_web_service.dart';
+import 'package:perplexity_clone/features/perplexity/home/screens/widgets/welcome_dialog.dart';
 
 class HomeDesktopScreen extends StatefulWidget {
   const HomeDesktopScreen({super.key});
@@ -13,10 +14,26 @@ class HomeDesktopScreen extends StatefulWidget {
 }
 
 class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
+  bool isLogin = false;
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!isLogin) {
+        loginPopup(context);
+      }
+    });
     ChatWebService().connect();
+  }
+
+  void loginPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return WelcomeDialog();
+      },
+    );
   }
 
   @override
