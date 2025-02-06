@@ -97,8 +97,8 @@ class _QuestionMarkState extends State<QuestionMark> {
                 child: Center(
                   child: SvgPicture.asset(
                     XImages.question,
-                    height: 17,
-                    width: 14,
+                    height: 14,
+                    width: 16,
                     colorFilter: ColorFilter.mode(
                       isHoveringQuestionMark
                           ? XColors.submitButton
