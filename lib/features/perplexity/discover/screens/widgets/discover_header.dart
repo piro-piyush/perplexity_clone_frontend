@@ -23,12 +23,16 @@ class _DiscoverHeaderState extends State<DiscoverHeader> {
       decoration: BoxDecoration(
           border: Border(
               bottom: BorderSide(color: XColors.searchBarBorder, width: 1))),
-      padding: EdgeInsets.symmetric(horizontal: 162),
-      child: Padding(
-          padding: EdgeInsets.only(left: 32, right: 32, top: 16),
+      child: Flexible(
+        child: Center(
           child: Container(
-            padding: EdgeInsets.only(bottom: 16),
+            width: 1100,
+            padding: EdgeInsets.only(
+              left: 32,
+              right: 32,
+            ),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               spacing: 8,
               children: [
                 SvgPicture.asset(
@@ -46,7 +50,9 @@ class _DiscoverHeaderState extends State<DiscoverHeader> {
                 ),
               ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
