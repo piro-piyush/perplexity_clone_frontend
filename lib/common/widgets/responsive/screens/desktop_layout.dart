@@ -5,9 +5,9 @@ import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/sizes.dart';
 
 class DesktopLayout extends StatelessWidget {
-  const DesktopLayout({super.key, this.body, this.header});
+  const DesktopLayout({super.key, this.body,});
 
-  final Widget? header;
+
   final Widget? body;
 
   @override
@@ -15,32 +15,37 @@ class DesktopLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: XColors.sideNav,
       body: Padding(
-        padding: EdgeInsets.only(right: 8, top: 8, bottom: 8),
+        padding: const EdgeInsets.only(right: 8, top: 8, bottom: 8),
         child: Row(
           children: [
+            // Ensure SideBar has a fixed width
             SideBar(),
             Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                color: XColors.background,
-                border: Border.all(
-                  color: XColors.iconGrey,
-                  width: 0.1,
-                ),
-                borderRadius: BorderRadius.circular(XSizes.cardRadiusSm),
-              ),
-              child: Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 70.0),
-                    child: body ?? SizedBox(),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: XColors.background,
+                  border: Border.all(
+                    color: XColors.iconGrey,
+                    width: 0.1,
                   ),
-                  header ?? SizedBox(),
-                  // Question Mark Icon
-                  QuestionMark(),
-                ],
+                  borderRadius: BorderRadius.circular(XSizes.cardRadiusSm),
+                ),
+                child: Stack(
+                  children: [
+                    // Body content positioned below the header
+                    SizedBox(),
+                    body ?? SizedBox(),
+
+                    // Ensure QuestionMark is positioned correctly
+                    Positioned(
+                      right: 15,
+                      bottom: 15,
+                      child: QuestionMark(),
+                    ),
+                  ],
+                ),
               ),
-            )),
+            ),
           ],
         ),
       ),
