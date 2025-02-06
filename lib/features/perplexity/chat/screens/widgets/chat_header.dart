@@ -5,8 +5,8 @@ import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/right_
 import 'package:perplexity_clone/utils/constants/colors.dart';
 import 'package:perplexity_clone/utils/constants/sizes.dart';
 
-class AnswerHeader extends StatefulWidget {
-  const AnswerHeader({
+class ChatHeader extends StatefulWidget {
+  const ChatHeader({
     super.key,
     required this.header,
   });
@@ -14,10 +14,10 @@ class AnswerHeader extends StatefulWidget {
   final String header;
 
   @override
-  State<AnswerHeader> createState() => _AnswerHeaderState();
+  State<ChatHeader> createState() => _ChatHeaderState();
 }
 
-class _AnswerHeaderState extends State<AnswerHeader> {
+class _ChatHeaderState extends State<ChatHeader> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:perplexity_clone/common/widgets/icons/question_mark.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/answer_body.dart';
-import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/answer_header.dart';
+import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/chat_header.dart';
 import 'package:perplexity_clone/features/perplexity/chat/screens/widgets/side_section_chat.dart';
 import 'package:perplexity_clone/utils/device/device_utility.dart';
 
@@ -19,7 +19,7 @@ class ChatDesktopScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              AnswerHeader(
+              ChatHeader(
                 header: question,
               ),
               Padding(
@@ -49,6 +49,3 @@ class ChatDesktopScreen extends StatelessWidget {
     );
   }
 }
-
-
-
