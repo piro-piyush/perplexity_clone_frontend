@@ -40,43 +40,35 @@ class _HomeDesktopScreenState extends State<HomeDesktopScreen> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
+        Center(
+          child: Flexible(
+            child: Container(
+              width: 768,
+              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                child: SizedBox(
-                  height: 625,
-                  width: 640,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      // Search Section
-                      SizedBox(
-                        height: 32,
-                      ),
-                      SearchSection(),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      SizedBox(height: 16),
-                      QuickSearchesButtons(),
-                    ],
-                  ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    // Search Section
+                    SizedBox(
+                      height: 32,
+                    ),
+                    SearchSection(),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    SizedBox(height: 16),
+                    QuickSearchesButtons(),
+                  ],
                 ),
               ),
-
-              // Footer Section
-              const FooterSection(),
-            ],
+            ),
           ),
         ),
 
-        // Question Mark Icon
-        QuestionMark(),
+        // Footer Section
+        Positioned(left: 0, right: 0, bottom: 0, child: const FooterSection()),
       ],
     );
   }
