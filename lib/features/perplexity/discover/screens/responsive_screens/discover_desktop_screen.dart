@@ -8,36 +8,53 @@ class DiscoverDesktopScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Center(
-        child: Container(
-          width: 1200,
-          padding: EdgeInsets.symmetric(horizontal: 32),
-          child: Center(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              spacing: 16,
-              children: [
-                Stack(children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 64.0),
-                    child: Row(
-                      spacing: 48,
-                      children: [
-                        TabBarChild(),
-                        SideCard(),
-                      ],
-                    ),
-                  ),
-                  // **Tab Bar (Fixed Height, No Expanded)**
-                  SizedBox(height: 64, child: TabBarWidget()),
-                ]),
-              ],
-            ),
-          ),
+    return Center(
+      child: Flexible(
+        child: SizedBox(
+          width: 1100,
+          child: DiscoverBody(),
         ),
       ),
+    );
+  }
+}
+
+class DiscoverBody extends StatelessWidget {
+  const DiscoverBody({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 32.0, right: 32.0, top: 64),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 48,
+            children: [
+              Expanded(
+                flex: 2,
+                child: TabBarChild(),
+              ),
+              Expanded(
+                child: SideCard(),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 64,
+          child: Row(
+            spacing: 16,
+            children: [
+              Expanded(flex: 2, child: TabBarWidget()),
+              Expanded(child: Container())
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
