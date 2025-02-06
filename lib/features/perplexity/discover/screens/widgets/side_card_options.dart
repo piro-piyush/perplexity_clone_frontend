@@ -12,12 +12,13 @@ class SideCardOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+      padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
       decoration: BoxDecoration(
           color: Color(0xFF144149).withValues(alpha: 0.2),
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(6),
           border: Border.all(color: Color(0xFF154C56).withValues(alpha: 0.2))),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         spacing: 4,
         children: [
           SvgPicture.asset(
@@ -31,7 +32,8 @@ class SideCardOptions extends StatelessWidget {
           ),
           Text(
             heading,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14),
           ),
         ],
       ),
