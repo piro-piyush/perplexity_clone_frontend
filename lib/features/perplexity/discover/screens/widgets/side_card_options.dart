@@ -14,9 +14,11 @@ class SideCardOptions extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 6, horizontal: 8),
       decoration: BoxDecoration(
-          color: Color(0xFF144149).withValues(alpha: 0.2),
-          borderRadius: BorderRadius.circular(6),
-          border: Border.all(color: Color(0xFF154C56).withValues(alpha: 0.2))),
+        color: Color.fromRGBO(32, 184, 205, 0.1),
+        borderRadius: BorderRadius.circular(6),
+        border:
+            Border.all(color: Color.fromRGBO(32, 184, 205, 0.1).withValues(alpha: 0.1), width: 0.1),
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         spacing: 4,

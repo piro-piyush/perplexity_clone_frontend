@@ -13,26 +13,23 @@ class SmallNewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Skeleton.leaf(
+    return Skeleton.leaf(
+      child: AspectRatio(
+        aspectRatio: 3 / 5,
         child: Container(
-          height: 312,
           decoration: BoxDecoration(
-              color: XColors.searchBar, borderRadius: BorderRadius.circular(8)),
+            color: XColors.searchBar,
+            borderRadius: BorderRadius.circular(8),
+            image: DecorationImage(
+              image: CachedNetworkImageProvider(
+                model.imageUrl,
+              ),
+              fit: BoxFit.cover,
+              alignment: Alignment.center,
+            ),
+          ),
           child: Stack(
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: CachedNetworkImage(
-                  imageUrl: model.imageUrl,
-                  fit: BoxFit.contain,
-                  placeholder: (context, url) =>
-                      Center(child: CircularProgressIndicator()),
-                  // Placeholder while loading
-                  errorWidget: (context, url, error) =>
-                      Icon(Icons.error), // Error widget in case of a failure
-                ),
-              ),
               Positioned(
                 left: 0,
                 right: 0,
@@ -49,19 +46,18 @@ class SmallNewsCard extends StatelessWidget {
                   padding: EdgeInsets.all(16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         model.title,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 16,
                           color: XColors.whiteColor,
                         ),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(
-                        height: 2,
-                      ),
+                      SizedBox(height: 2),
                       Text(
                         model.content,
                         style: TextStyle(
@@ -71,28 +67,25 @@ class SmallNewsCard extends StatelessWidget {
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(
-                        height: 8,
-                      ),
+                      SizedBox(height: 8),
                       Padding(
-                        padding: const EdgeInsets.only(
-                          top: 4.0,
-                        ),
+                        padding: const EdgeInsets.only(top: 4.0),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
-                              spacing: 4,
                               children: [
                                 Container(
                                   width: 20,
                                   height: 20,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              model.curatedByImage))),
+                                    borderRadius: BorderRadius.circular(20),
+                                    image: DecorationImage(
+                                      image: NetworkImage(model.curatedByImage),
+                                    ),
+                                  ),
                                 ),
+                                SizedBox(width: 4),
                                 Text(
                                   model.curatedBy,
                                   style: TextStyle(
@@ -105,7 +98,6 @@ class SmallNewsCard extends StatelessWidget {
                             Container(
                               width: 32,
                               height: 32,
-                              decoration: BoxDecoration(),
                               child: Center(
                                 child: SvgPicture.asset(
                                   XImages.bookmark,
