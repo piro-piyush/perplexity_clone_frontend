@@ -11,7 +11,7 @@ class XSiteTemplate extends StatelessWidget {
       this.desktop,
       this.tablet,
       this.mobile,
-        this.header,
+      this.header,
       this.useLayout = true});
 
   // Widget for desktop layout
@@ -35,13 +35,11 @@ class XSiteTemplate extends StatelessWidget {
         body: XResponsiveWidget(
       desktop: useLayout
           ? DesktopLayout(
-        header:header,
               body: desktop,
             )
           : desktop ?? Container(),
       tablet: useLayout
           ? TabletLayout(
-        header:header,
               body: tablet ?? desktop,
             )
           : tablet ?? desktop ?? Container(),
